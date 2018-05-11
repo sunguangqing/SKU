@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 根据浏览器的屏幕大小自适应的展现合适的效果 -->
+    <meta name="applicable-device" content="pc,mobile"/>
+    <!-- 移动端 浏览器中页面将以原始大小显示，不允许缩放 -->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <!--自动选择更好的浏览器-->
+    <meta name="renderer" content="webkit">
+    <title>商品属性规格SKU</title>
+    <link href="css/layui.css" rel="stylesheet" />
+    <link href="css/sku.css" rel="stylesheet" />
+</head>
+<body>
+
+<div class="fl supplier-left">
+    <div class="logo"><img src="images/logo-w.png" /></div>
+    <ul class="left-nav">
+        <li><a class="icon1" href="#"><i></i>首页</a></li>
+        <li><a class="icon2" href="#"><i></i>订单管理</a>
+            <ul>
+                <li><a href="#">订单列表</a></li>
+                <li><a href="#">售后订单</a></li>
+            </ul>
+        </li>
+        <li><a class="active icon3" href="#"><i></i>商品管理</a>
+            <ul>
+                <li><a href="#">商品列表</a></li>
+                <li><a class="active" href="#">发布商品</a></li>
+            </ul>
+        </li>
+        <li><a class="icon4" href="#"><i></i>资产管理</a>
+            <ul>
+                <li><a href="#">保证金管理</a></li>
+                <li><a href="#">资产管理</a></li>
+            </ul>
+        </li>
+        <li><a class="icon5" href="#"><i></i>客户服务</a>
+            <ul>
+                <li><a href="#">发票管理</a></li>
+            </ul>
+        </li>
+        <li><a class="icon6" href="#"><i></i>运费管理</a>
+            <ul>
+                <li><a href="#">运费列表</a></li>
+            </ul>
+        </li>
+        <li><a class="icon7" href="#"><i></i>店铺管理</a>
+            <ul>
+                <li><a href="#">基本信息</a></li>
+                <li><a href="#">店铺模板</a></li>
+                <li><a href="#">店铺二级域名</a></li>
+                <li><a href="#">商品分类导航</a></li>
+            </ul>
+        </li>
+        <li><a class="icon8" href="#"><i></i>报表管理</a>
+            <ul>
+                <li><a href="#">收入报表</a></li>
+                <li><a href="#">可视化报表</a></li>
+            </ul>
+        </li>
+        <li><a class="icon9" href="#"><i></i>消息中心</a>
+            <ul>
+                <li><a href="#">站内信管理</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="fl supplier-right">
+    <div class="top">
+        <a href="javascript:;" class="active"><i class="tb"></i>系统消息</a><a href="javascript:;"><i class="tb"></i>用户</a>
+    </div>
+    <div class="supplier-title">商品管理</div>
+    <div class="container">
+        <div class="content">
+            <div class="title">商品基本信息</div>
+            <div class="clearfix info-list surplus-number">
+                <span class="fl caption"><i class="color-f00">*</i> 商品名称：</span>
+                <input class="textarea_01" maxlength="50" type="text" placeholder="" />
+                <div class="num-wrap"><span class="num">0</span>/50</div>
+            </div>
+            <div class="clearfix info-list surplus-number">
+                <span class="fl caption">商品卖点：</span>
+                <input class="textarea_02" maxlength="50" type="text" placeholder="" />
+                <div class="num-wrap"><span class="num">0</span>/50</div>
+            </div>
+            <div class="clearfix">
+                <div class="clearfix info-list">
+                    <span class="fl caption"><i class="color-f00">*</i> 商品规格：</span>
+                    <div class="fl control-group choose_config">
+                        <div class="controls">
+                            <table class="list">
+                                <tr class="Father_Title"><th class="spec">规格名: </th><th><div class="name">颜色</div></th></tr>
+                                <tr class="spec-value">
+                                    <td class="spec">规格值：</td>
+                                    <td class="Father_Item Father_Item0">
+                                        <span><label class="checkedBox"><i></i><input type="checkbox" class="checkbox check_all" value="全选">全选</label></span><span>
+                                        <label class="checkedBox"><i class="checked"></i><input checked type="checkbox" class="checkbox check_item" value="红色">红色</label><i class="upload-pic"><input type="file" /></i></span>
+                                        <span><label class="checkedBox"><i></i><input type="checkbox" class="checkbox check_item" value="白色">白色</label><i class="upload-pic"><input type="file" /></i></span>
+                                        <span><label class="checkedBox"><i></i><input type="checkbox" class="checkbox check_item" value="土豪金">土豪金</label><i class="upload-pic"><input type="file" /></i></span>
+                                        <a class="add-value-btn" href="javascript:;">+添加规格值</a>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="list">
+                                <tr class="Father_Title"><th class="spec">规格名: </th><th><div class="name">内存</div></th></tr>
+                                <tr class="spec-value">
+                                    <td class="spec">规格值：</td>
+                                    <td class="Father_Item Father_Item1">
+                                        <span><label class="checkedBox"><i></i><input type="checkbox" class="checkbox check_all" value="全选">全选</label></span>
+                                        <span><label class="checkedBox"><i class="checked"></i><input type="checkbox" checked class="checkbox check_item" value="16G">16G</label><i class="upload-pic"><input type="file" /></i></span>
+                                        <span><label class="checkedBox"><i class="checked"></i><input type="checkbox" checked class="checkbox check_item" value="32G">32G</label><i class="upload-pic"><input type="file" /></i></span>
+                                        <span><label class="checkedBox"><i></i><input type="checkbox" class="checkbox check_item" value="128G">128G</label><i class="upload-pic"><input type="file" /></i></span>
+                                        <a class="add-value-btn" href="javascript:;">+添加规格值</a>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="list">
+                                <tr class="Father_Title"><th class="spec">规格名: </th><th><div class="name">套餐</div></th></tr>
+                                <tr class="spec-value">
+                                    <td class="spec">规格值：</td>
+                                    <td class="Father_Item Father_Item2">
+                                        <span><label class="checkedBox"><i></i><input type="checkbox" class="checkbox check_all" value="全选">全选</label></span>
+                                        <span><label class="checkedBox"><i></i><input type="checkbox" class="checkbox check_item" value="标准套餐">标准套餐</label><i class="upload-pic"><input type="file" /></i></span>
+                                        <span><label class="checkedBox"><i></i><input type="checkbox" class="checkbox check_item" value="官方套餐一">官方套餐一</label><i class="upload-pic"><input type="file" /></i></span>
+                                        <span><label class="checkedBox"><i></i><input type="checkbox" class="checkbox check_item" value="官方套餐二">官方套餐二</label><i class="upload-pic"><input type="file" /></i></span>
+                                        <a class="add-value-btn" href="javascript:;">+添加规格值</a>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="add-speclist"><span class="btn">添加规格名</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix info-list">
+                    <span class="fl caption"><i class="color-f00">*</i> 规格明细：</span>
+                    <div class="fl control-group">
+                        <div class="controls" id="createTable"></div>
+                        <div class="control-hidden"></div>
+                    </div>
+                    <div class="clearfix batch-btnwrap">
+                        <input type="button" class="stock-btn btn" value="批量修改库存" />
+                        <input type="button" class="btn" value="批量修改价格" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--批量修改库存-->
+<div class="frame-wrap stock-frame-wrap clearfix">
+    <div class="stock-frame">
+        <div class="title">批量修改库存</div>
+        <div class="cont">
+            <label class="radio-input" for="tystock"><i class="checked"></i><input id="tystock" checked type="radio" name="tystock" />统一库存</label>
+            <input class="input" type="text" placeholder="" /><br />
+
+            <label class="radio-input" for="tzstock"><i></i><input id="tzstock" type="radio" name="tystock" />调整库存</label>
+            <select class="select"><option>加</option><option>减</option></select>
+            <input class="input" type="text" placeholder="" />
+
+            <div class="btngroup"><input class="confirm" type="button" value="确定"><input class="cancel" type="button" value="取消"></div>
+        </div>
+        <span class="close-frame-btn"></span>
+    </div>
+</div>
+
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="layer/layer.js"></script>
+<script src="js/sku.js"></script>
+</body>
+</html>

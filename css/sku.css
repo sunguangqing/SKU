@@ -1,0 +1,617 @@
+/*reset css*/
+body, div, p, input, button, textarea, select, img, h1, h2, h3, h4, h5, h6, dl, dd, dt, ul, ol, li, a, em, i,
+table, tbody, thead, th, td, em {
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    border: 0;
+    font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ul, ol, li {
+    list-style: none;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+input, textarea, select, button, img {
+    background-color: transparent;
+}
+a {
+    text-decoration: none;
+    color: #262626;
+    cursor: pointer;
+}
+:focus {
+    outline: none;
+}
+/*浮动*/
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+/*清除浮动*/
+.clearfix {
+    zoom: 1;
+    clear: both;
+}
+.clearfix:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+}
+/*行内元素*/
+.inline, span, a, b, i, em {
+    display: inline-block;
+}
+/*勾选按钮*/
+.checkedBox{
+    cursor: pointer;
+}
+.checkedBox i{
+    width: 16px;
+    height: 16px;
+    border: 1px solid #d9d9d9;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #fff;
+    vertical-align: text-bottom;
+}
+.checkedBox i.checked{
+    border: 0;
+    background: url("../images/login-sprite.png") no-repeat -23px -42px;
+}
+.checkedBox input{
+    opacity: 0;
+    margin-left: -6px;
+}
+/*单选按钮*/
+.radio-input input{
+    opacity: 0;
+    margin-left: -3px;
+}
+.radio-input i{
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/login-sprite.png);
+    background-repeat: no-repeat;
+    background-position: -91px -1px;
+    vertical-align: text-bottom;
+}
+.radio-input i.checked{
+    background-position: -112px -1px;
+}
+/*删除按钮*/
+.del {
+    position: relative;
+    background-color: rgba(0, 0, 0, .4);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.del:before, .del:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.1px;
+    height: 9px;
+    display: block;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.del:before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.del:after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+/*按钮组*/
+.btngroup .confirm, .btngroup .cancel{
+    line-height: 32px;
+    border-radius: 4px;
+    padding: 0 16px;
+}
+.btngroup .confirm{
+    color: #fff;
+    background-color: #108ee9;
+}
+.btngroup .cancel{
+    border: 1px solid #d9d9d9;
+}
+/*弹框叉号*/
+.close-frame-btn{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 13px;
+    right: 18px;
+    z-index: 18;
+}
+.close-frame-btn:before, .close-frame-btn:after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 16px;
+    height: 1.5px;
+    top: 7px;
+    left: 0;
+    border-radius: 3px;
+    background-color: #afafaf;
+}
+.close-frame-btn:before{
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.close-frame-btn:after{
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+/*颜色*/
+.color-f00{
+    color: #f00;
+}
+/*按钮*/
+[class$="-btn"] {
+    cursor: pointer;
+}
+.btn{
+    color: #fff;
+    background-color: #108ee9;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.btn:hover{
+    color: #fff;
+    text-decoration: underline;
+}
+/*input 表单*/
+button, input[type = submit], input[type = button]{
+    cursor: pointer;
+}
+input[type = text], select{
+    webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #d9d9d9;
+    padding: 0 10px;
+}
+select{
+    resize: none;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url("../images/select.png") no-repeat right center;
+}
+
+/*开始*/
+body{
+    color: #262626;
+    background-color: #f5f5f5;
+    font-size: 14px;
+}
+/*左侧*/
+.supplier-left{
+    min-height: 860px;
+    width: 200px;
+    background-color: #d9d9d9;
+}
+.supplier-left .logo{
+    height: 64px;
+    background-color: #001529;
+    text-align: center;
+    padding-top: 14px;
+}
+.left-nav a{
+    height: 56px;
+    width: 100%;
+    line-height: 56px;
+    font-size: 16px;
+    padding-left: 38px;
+}
+.left-nav li li a{
+    padding-left: 68px;
+}
+.left-nav li li a.active{
+    color: #108ee9;
+}
+.left-nav > li ul{
+    display: none;
+    background-color: #bfbfbf;
+}
+.left-nav > li > a{
+    background: url("../images/down-g.png") no-repeat 150px center;
+}
+.left-nav > li > a.active{
+    background-image: url("../images/down-w.png");
+}
+.left-nav > li:first-child > a{
+    background: none;
+}
+.left-nav > li > a.active{
+    color: #fff;
+    background-color: #108ee9;
+}
+.left-nav li i{
+    width: 19px;
+    height: 19px;
+    background: url("../images/shop-sprite.png") no-repeat -23px -1px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.left-nav .icon2 i{
+    background-position: -24px -28px;
+}
+.left-nav .icon3 i{
+    background-position: -25px -52px;
+}
+.left-nav .icon4 i{
+    background-position: -25px -75px;
+}
+.left-nav .icon5 i{
+    background-position: -26px -98px;
+}
+.left-nav .icon6 i{
+    background-position: -23px -122px;
+}
+.left-nav .icon7 i{
+    background-position: -24px -142px;
+}
+.left-nav .icon8 i{
+    background-position: -25px -167px;
+}
+.left-nav .icon9 i{
+    background-position: -25px -195px;
+}
+.left-nav .icon1.active i{
+    background-position: 0 0;
+}
+.left-nav .icon2.active i{
+    background-position: -3px -27px;
+}
+.left-nav .icon3.active i{
+    background-position: -3px -51px;
+}
+.left-nav .icon4.active i{
+    background-position: -3px -75px;
+}
+.left-nav .icon5.active i{
+    background-position: -3px -98px;
+}
+.left-nav .icon6.active i{
+    background-position: -2px -122px;
+}
+.left-nav .icon7.active i{
+    background-position: -3px -143px;
+}
+.left-nav .icon8.active i{
+    background-position: -2px -167px;
+}
+.left-nav .icon9.active i{
+    background-position: -3px -195px;
+}
+
+/*右侧*/
+.supplier-right{
+    width: calc(100% - 200px);
+    width: -moz-calc(100% - 200px);
+    width: -webkit-calc(100% - 200px);
+}
+.supplier-right .top{
+    height: 64px;
+    line-height: 64px;
+    text-align: right;
+    background-color: #fff;
+    padding-right: 24px;
+}
+.supplier-right .top a{
+    margin-left: 20px;
+}
+.supplier-right .top a.active{
+    position: relative;
+}
+.supplier-right .top a.active:after{
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 21px;
+    width: 6px;
+    height: 6px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #ff0202;
+}
+.supplier-right .top i{
+    width: 14px;
+    height: 16px;
+    background: url("../images/shop-sprite.png") no-repeat -3px -222px;
+    vertical-align: middle;
+    margin-right: 7px;
+}
+.supplier-right .top a:last-child i{
+    background-position: -25px -222px;
+}
+.supplier-right .container{
+    background-color: #f5f5f5;
+    padding: 24px;
+}
+.supplier-title{
+    line-height: 56px;
+    font-size: 16px;
+    border-top: 1px solid #e8e8e8;
+    background-color: #fff;
+    padding-left: 22px;
+}
+.supplier-right .content{
+    background-color: #fff;
+    padding: 50px 25px;
+}
+/*右侧主体内容*/
+.supplier-right .title{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.info-list{
+    margin-bottom: 15px;
+}
+.info-list .caption{
+    width: 150px;
+    text-align: right;
+    line-height: 32px;
+    padding-right: 10px;
+}
+/*剩余字数*/
+.surplus-number input{
+    width: 740px;
+    height: 32px;
+}
+.surplus-number{
+    position: relative;
+}
+.num-wrap{
+    position: absolute;
+    left: 840px;
+    top: 8px;
+    font-size: 16px;
+    width: 48px;
+    color: #d9d9d9;
+}
+/*剩余字数 END*/
+.control-group,
+.commodity-describe,
+.commodity-property{
+    width: calc(100% - 200px);
+    width: -webkit-calc(100% - 200px);
+    width: -moz-calc(100% - 200px);
+}
+.control-group th{
+    height: 40px;
+    text-align: left;
+    border: 1px solid #e8e8e8;
+    background-color: #f5f5f5;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.control-group td{
+    height: 50px;
+    border: 1px solid #e8e8e8;
+    padding: 5px 0 5px 20px;
+}
+.choose_config th:first-child,
+.choose_config td:first-child{
+    width: 85px;
+    text-align: center;
+    color: #8c8c8c;
+    padding-left: 0;
+    padding-right: 0;
+}
+.Father_Item > span{
+    line-height: 32px;
+    margin: 5px 32px 5px 0;
+}
+.Father_Item .uploadImg{
+    position: relative;
+    float: left;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    margin-left: 8px;
+}
+.Father_Item .uploadImg i{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 32px;
+    font-size: 12px;
+    color: #fff;
+    background-color: rgba(0,0,0,.5);
+    cursor: pointer;
+}
+.Father_Item .uploadImg:hover i{
+    display: block;
+}
+.Father_Item .uploadImg img{
+    width: 100%;
+    height: 100%;
+}
+.Father_Item > span,
+.Father_Item > span .checkedBox,
+.Father_Item > span .upload-pic{
+    float: left;
+}
+.Father_Item .checkedBox .del{
+    width: 15px;
+    height: 15px;
+    right: 8px;
+    top: -12px;
+}
+.Father_Item .checkedBox input:first-child{
+    opacity: 0;
+    margin-left: -6px;
+}
+.Father_Title .name{
+    float: left;
+    line-height: 32px;
+}
+.Father_Item .checkedBox > .xs{
+    height: 32px;
+    border: 1px solid #d9d9d9;
+    margin-left: 3px;
+    padding: 0 12px;
+}
+.Father_Item .addIpnut, .Father_Title .addIpnut, .Father_Item .checkedBox > .xs{
+    opacity: 1;
+    height: 32px;
+    width: 120px !important;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    background-color: #fff;
+}
+.Father_Title .del-list{
+    height: 32px;
+    line-height: 32px;
+    color: #108ee9;
+    cursor: pointer;
+}
+.Father_Item .addIpnut{
+    margin-left: 3px;
+}
+.Father_Item .upload-pic{
+    position: relative;
+    overflow: hidden;
+    width: 32px;
+    height: 32px;
+    background: url("../images/check-addimg.png") no-repeat center center;
+    margin-left: 8px;
+}
+.Father_Item .upload-pic input{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+.Father_Item .add-value-btn{
+    color: #108ee9;
+    line-height: 32px;
+    margin: 5px 0;
+}
+.controls .list{
+    margin-bottom: 12px;
+}
+.control-group .add-speclist .btn{
+    line-height: 32px;
+    padding: 0 25px;
+    cursor: pointer;
+}
+#createTable table th{
+    width: 100px;
+    text-align: center;
+}
+#createTable table th .bm{
+    position: relative;
+    top: 2px;
+    width: 14px;
+    height: 14px;
+    background: url("../images/shop-sprite.png") no-repeat -43px -155px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+#createTable table td{
+    height: 55px;
+    text-align: center;
+}
+#createTable table td input{
+    width: 80px;
+    height: 32px;
+    border: 1px solid #e8e8e8;
+}
+.batch-btnwrap{
+    text-align: right;
+    padding-right: 50px;
+    padding-top: 15px;
+}
+.batch-btnwrap .btn{
+    line-height: 32px;
+    padding: 0 20px;
+    margin-left: 10px;
+}
+
+/*弹框*/
+/*批量修改库存*/
+.frame-wrap{
+    display: none;
+    position: relative;
+    background-color: rgba(0,0,0,.5);
+    padding: 4px;
+}
+.frame-wrap .title{
+    line-height: 48px;
+    font-weight: bold;
+    padding-left: 25px;
+    background-color: #f5f5f5;
+}
+.stock-frame-wrap{
+    width: 400px;
+    height: 248px;
+}
+.stock-frame{
+    height: 240px;
+    background-color: #fff;
+}
+.stock-frame .cont{
+    padding: 25px 22px;
+}
+.stock-frame .cont > .input{
+    margin-bottom: 23px;
+}
+.stock-frame .cont .input, .stock-frame .cont .select{
+    height: 26px;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    margin-left: 5px;
+}
+.stock-frame .cont .input{
+    width: 130px;
+}
+.stock-frame .cont .select{
+    width: 52px;
+    padding: 0 4px;
+}
+.stock-frame .btngroup{
+    text-align: center;
+}
+.stock-frame .btngroup input{
+    margin: 5px 8px;
+}
