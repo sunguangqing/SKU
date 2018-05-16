@@ -14,8 +14,8 @@ $(function() {
 
     // 剩余字数
     function residualFigure(txt, residue, max){
-        $(txt).on("keyup",function(){
-            var content = $(this).val(),
+        function Number() {
+            var content = $(txt).val(),
                 len = content.length,
                 residual_number = max - len;
             if(residual_number < 0){
@@ -24,8 +24,13 @@ $(function() {
             if(len > max){
                 len = max;
             }
-            $(this).siblings().find(residue).text(len);
-        });
+            $(txt).siblings().find(residue).text(len);
+        }
+        $(txt).on("keyup", Number);
+        //判断是否需要调用该函数
+        if(typeof $(txt).val() !== 'undefined'){
+            Number();
+        }
     }
     residualFigure(".textarea_01", ".num", 50);
     residualFigure(".textarea_02", ".num", 50);
