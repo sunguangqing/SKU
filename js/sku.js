@@ -133,7 +133,7 @@ $(function() {
     });
 
     //规格明细初始值设置
-    setInterval(function(){step.Creat_Table()}, 1000);
+    setTimeout(function(){step.Creat_Table()}, 1000);
 
     // 上传缩略图
     $(document).on("change", ".upload-pic input", function(){
