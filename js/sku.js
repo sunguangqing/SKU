@@ -185,7 +185,7 @@ $(function() {
         }
         layerFrame(".stock-btn", '400px', '248px', '.stock-frame-wrap');
 
-        $(".close-frame-btn").on("click", function () {
+        $(".close-frame-btn, .frame-wrap .cancel").on("click", function () {
             layer.close(piece_frame);
         });
 
