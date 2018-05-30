@@ -65,6 +65,7 @@ $(function() {
         var add_name = $(this).val();
         if(add_name !== ''){
             $(this).parent().text(add_name);
+            step.Creat_Table();
         }
     });
     $(document).on("change", ".checkedBox .addIpnut", function () {
